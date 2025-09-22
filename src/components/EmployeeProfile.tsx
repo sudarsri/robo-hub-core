@@ -65,50 +65,52 @@ export function EmployeeProfile() {
           </div>
 
           {/* Employee Details */}
-          <div className="flex-1 min-w-0 space-y-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="space-y-4 min-w-0">
+          <div className="flex-1 space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+              {/* Left Column */}
+              <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-1" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-xs text-muted-foreground">Email</p>
-                    <p className="text-sm font-medium text-foreground break-all">{mockEmployeeData.email}</p>
+                  <Mail className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <p className="text-xs text-muted-foreground mb-1">Email</p>
+                    <p className="text-sm font-medium text-foreground leading-tight">{mockEmployeeData.email}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-1" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-xs text-muted-foreground">Phone</p>
-                    <p className="text-sm font-medium text-foreground break-all">{mockEmployeeData.phone}</p>
+                  <Phone className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <p className="text-xs text-muted-foreground mb-1">Phone</p>
+                    <p className="text-sm font-medium text-foreground leading-tight">{mockEmployeeData.phone}</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <MapPin className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-1" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-xs text-muted-foreground">Location</p>
-                    <p className="text-sm font-medium text-foreground break-words">{mockEmployeeData.location}</p>
+                  <MapPin className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <p className="text-xs text-muted-foreground mb-1">Location</p>
+                    <p className="text-sm font-medium text-foreground leading-tight">{mockEmployeeData.location}</p>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-4 min-w-0">
-                <div className="min-w-0">
-                  <p className="text-xs text-muted-foreground">Employee ID</p>
-                  <p className="text-sm font-medium text-foreground break-all">{mockEmployeeData.employeeId}</p>
+              {/* Right Column */}
+              <div className="space-y-4">
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1">Employee ID</p>
+                  <p className="text-sm font-medium text-foreground leading-tight">{mockEmployeeData.employeeId}</p>
                 </div>
                 
-                <div className="min-w-0">
-                  <p className="text-xs text-muted-foreground">Department</p>
-                  <p className="text-sm font-medium text-foreground break-words">{mockEmployeeData.department}</p>
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1">Department</p>
+                  <p className="text-sm font-medium text-foreground leading-tight">{mockEmployeeData.department}</p>
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <Calendar className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-1" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-xs text-muted-foreground">Join Date</p>
-                    <p className="text-sm font-medium text-foreground break-words">
+                  <Calendar className="h-4 w-4 text-muted-foreground flex-shrink-0 mt-0.5" />
+                  <div className="flex-1">
+                    <p className="text-xs text-muted-foreground mb-1">Join Date</p>
+                    <p className="text-sm font-medium text-foreground leading-tight">
                       {new Date(mockEmployeeData.joinDate).toLocaleDateString('en-US', {
                         year: 'numeric',
                         month: 'long',
@@ -118,9 +120,9 @@ export function EmployeeProfile() {
                   </div>
                 </div>
                 
-                <div className="min-w-0">
-                  <p className="text-xs text-muted-foreground">Manager</p>
-                  <p className="text-sm font-medium text-foreground break-words">{mockEmployeeData.manager}</p>
+                <div>
+                  <p className="text-xs text-muted-foreground mb-1">Manager</p>
+                  <p className="text-sm font-medium text-foreground leading-tight">{mockEmployeeData.manager}</p>
                 </div>
               </div>
             </div>
