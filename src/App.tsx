@@ -11,6 +11,7 @@ import Attendance from "./pages/Attendance";
 import Leave from "./pages/Leave";
 import Documents from "./pages/Documents";
 import Settings from "./pages/Settings";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
               </header>
               <main className="flex-1 p-6">
                 <Routes>
+                  <Route path="/login" element={<Login />} />
                   <Route path="/" element={<Index />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/attendance" element={<Attendance />} />
