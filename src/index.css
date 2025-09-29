@@ -78,6 +78,8 @@ All colors MUST be HSL.
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(259 64% 29%), hsl(254 41% 63%));
+    --gradient-light: linear-gradient(135deg, hsl(0 0% 92%), hsl(0 0% 100%));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 20%), hsl(0 0% 5%));
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 13% 98%));
     
     /* Shadows */

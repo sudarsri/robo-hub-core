@@ -7,9 +7,9 @@ const Index = () => {
   return (
     <div className="space-y-6">
       {/* Welcome Section */}
-      <div className="bg-gradient-primary text-white p-6 rounded-lg shadow-elevated">
-        <h1 className="text-2xl font-bold mb-2">Welcome back, Rajesh!</h1>
-        <p className="text-white/90">Here's what's happening with your work today.</p>
+      <div className="bg-gradient-light p-6 rounded-lg shadow-elevated border border-border">
+        <h1 className="text-2xl font-bold mb-2 bg-gradient-text bg-clip-text text-transparent">Welcome back, Rajesh!</h1>
+        <p className="text-foreground/80">Here's what's happening with your work today.</p>
       </div>
 
       {/* Dashboard Stats */}
