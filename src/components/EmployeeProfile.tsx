@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Mail, Phone, MapPin, Calendar, Edit } from "lucide-react";
+import { Mail, Phone, MapPin, Calendar, Edit, Camera } from "lucide-react";
+import { ImageUploadCrop } from "./ImageUploadCrop";
 
 interface EmployeeData {
   name: string;
@@ -31,6 +33,12 @@ const mockEmployeeData: EmployeeData = {
 };
 
 export function EmployeeProfile() {
+  const [profileImage, setProfileImage] = useState<string>("/placeholder.svg");
+
+  const handleImageChange = (newImage: string) => {
+    setProfileImage(newImage);
+  };
+
   return (
     <Card className="shadow-card">
       <CardHeader>
@@ -46,12 +54,19 @@ export function EmployeeProfile() {
         <div className="flex flex-col xl:flex-row gap-6">
           {/* Avatar and Basic Info */}
           <div className="flex flex-col items-center xl:items-start space-y-4 flex-shrink-0">
-            <Avatar className="h-24 w-24">
-              <AvatarImage src="/placeholder.svg" alt={mockEmployeeData.name} />
-              <AvatarFallback className="text-lg font-semibold bg-primary text-primary-foreground">
-                {mockEmployeeData.name.split(' ').map(n => n[0]).join('')}
-              </AvatarFallback>
-            </Avatar>
+            <ImageUploadCrop currentImage={profileImage} onImageChange={handleImageChange}>
+              <div className="relative group">
+                <Avatar className="h-24 w-24 transition-all duration-200 group-hover:opacity-80">
+                  <AvatarImage src={profileImage} alt={mockEmployeeData.name} />
+                  <AvatarFallback className="text-lg font-semibold bg-primary text-primary-foreground">
+                    {mockEmployeeData.name.split(' ').map(n => n[0]).join('')}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="absolute inset-0 bg-black/50 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <Camera className="h-6 w-6 text-white" />
+                </div>
+              </div>
+            </ImageUploadCrop>
             <div className="text-center xl:text-left min-w-0">
               <h3 className="text-xl font-semibold text-foreground break-words">{mockEmployeeData.name}</h3>
               <p className="text-muted-foreground text-sm break-words">{mockEmployeeData.position}</p>
