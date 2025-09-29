@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/contexts/AuthContext";
 import warehouseBg from "@/assets/warehouse-robotics-bg.jpg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+  const { login } = useAuth();
   const { toast } = useToast();
 
   const validateEmail = (email: string) => {
@@ -51,7 +51,7 @@ const Login = () => {
         title: "Login Successful",
         description: "Welcome to AutoRobotics Dashboard!",
       });
-      navigate("/");
+      login();
       setIsLoading(false);
     }, 1000);
   };
